@@ -47,8 +47,8 @@ int main()
   // To be compatible with all platforms, we can count only 1 event at the
   // same time (the silicon as only 1 HW counter), but the total number of cyles
   // is reported by a timer, we can activate it at the same time.
-  do_bench_0(&perf, (1<<RT_PERF_CYCLES) | (1<<RT_PERF_INSTR));
-  printf("Total cycles: %d\n", rt_perf_read(RT_PERF_CYCLES));
+  do_bench_0(&perf, (1<<RT_PERF_ACTIVE_CYCLES) | (1<<RT_PERF_INSTR));
+  printf("Total cycles: %d\n", rt_perf_read(RT_PERF_ACTIVE_CYCLES));
   printf("Instructions: %d\n", rt_perf_read(RT_PERF_INSTR));
 
 
